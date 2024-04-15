@@ -1,6 +1,6 @@
-# React + Vite
+# Pierluigi Stats :soccer:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Pierluigi Stats**, the ultimate React app for football betting! Dive into a world of stats, figures, and analytics as you explore the performance of your favorite teams.
 
 Currently, two official plugins are available:
 
