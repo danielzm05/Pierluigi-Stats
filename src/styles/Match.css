@@ -1,0 +1,62 @@
+.match{
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--grey);
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  border: 0.01em solid var(--light-grey);
+
+  & .competition{
+    border-bottom: 0.01em solid var(--light-grey);
+    padding: 5px 10px;
+    font-weight: bold;
+    color: var(--light-grey);
+  }
+
+  .match-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    
+    & .team, .info-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .logo{
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    & .date{
+      color: var(--light-grey);
+      font-weight:lighter;
+    }
+
+    & .score {
+      font-size: 16px;
+    }
+  }
+
+  .predictions{
+    display: flex;
+    background: var(--black);
+    border-radius: 0 0 10px 10px;
+
+    & .team-prediction {
+      width: 50%;
+
+      & span {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+      }
+    }
+
+
+
+  }
+}
