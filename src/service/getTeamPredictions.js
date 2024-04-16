@@ -74,54 +74,6 @@ export function getTeamPredictions (teamId, competition , quantityOfMatches){
   return predictions
 }
 
-/* 
-let predictions = {
-    BTTS: 0,
-
-    },
-    fouls: {
-      ft: {
-        total20_5: 0,
-        under20_5: 0,
-      },
-      team: {
-        total9_5: 0,
-        under9_5: 0,
-      }
-    },
-    yellowCards: {
-      ft: {
-        total4_5 : 0,
-        under4_5 : 0,
-      },
-      team: {
-        total3_5 : 0,
-        under3_5 : 0,
-      }
-    },
-    corners: {
-      ft: {
-        total10_5 : 0,
-        under10_5 : 0,
-      },
-      team: {
-        total3_5 : 0,
-        under3_5 : 0,
-      }
-    },
-    offsides: {
-      ft: {
-        total3_5 : 0,
-        under3_5 : 0,
-      },
-      team: {
-        total1_5 : 0,
-        under1_5 : 0,
-      }
-    },
-  } */
-
-
 
 
 

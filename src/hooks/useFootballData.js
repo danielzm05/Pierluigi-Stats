@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useFetchData } from "./useFetchData";
 
 export function useFootballData(endpoint, leagueCode) {
   const [data, setData] = useState(null);
@@ -17,11 +18,11 @@ export function useFootballData(endpoint, leagueCode) {
 
 async function getStatsGame(endpoint, leagueCode) {
   try {
-    const matchesIds = await fetchData(endpoint);
+    const matchesIds = await useFetchData(endpoint);
     
     // Creamos un array de promesas para cada partido
     const matchPromises = matchesIds?.events?.map(match => {
-      return fetchData(`https://site.api.espn.com/apis/site/v2/sports/soccer/${leagueCode}/summary?event=${match.id}`);
+      return useFetchData(`https://site.api.espn.com/apis/site/v2/sports/soccer/${leagueCode}/summary?event=${match.id}`);
     });
 
     // Esperamos a que todas las promesas se resuelvan
@@ -103,16 +104,7 @@ async function getStatsGame(endpoint, leagueCode) {
   }
 }
 
-async function fetchData(endpoint) {
 
-  try {
-    const response = await fetch(endpoint);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
 
 
 /* 
