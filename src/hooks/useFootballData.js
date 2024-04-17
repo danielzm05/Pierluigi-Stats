@@ -97,7 +97,6 @@ async function getStatsGame(endpoint, leagueCode) {
       }
     })) 
 
-    console.log(matchesStats)
     return matchesStats; 
   } catch (error) {
     console.error('Error in getStatsGame:', error);
@@ -105,14 +104,3 @@ async function getStatsGame(endpoint, leagueCode) {
 }
 
 
-
-
-/* 
-  https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/summary?event=671339 
-  https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20240403
-  https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard
-
-
-
-  
-*/
