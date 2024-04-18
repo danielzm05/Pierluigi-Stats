@@ -1,10 +1,9 @@
 import { Header } from './components/Header';
 import { useContext } from 'react';
 import { FiltersContext } from './context/filter';
-import { Match } from './components/Match';
 import { Standings } from './components/Standings';
+import { Matches } from './components/Matches';
 import { useFootballData } from './hooks/useFootballData';
-import { getStandings } from './service/getStandings';
 import './App.css'
 
 export function App() {
@@ -20,19 +19,9 @@ export function App() {
       <main>
         {/* <h2>Today Matches</h2> */}
 
+      <Matches matches={matches}/>
       <Standings/>
-
-      {
-        matches && matches.length > 0 ? (
-
-          matches.map(match => (
-            <Match match={match} key={match.id}/>
-          ))
-
-        ) : (
-          <span className='message'>This league has no games on this date :( </span>
-        )
-      }
+      <Matches matches={matches}/>
 
       </main>
     </>

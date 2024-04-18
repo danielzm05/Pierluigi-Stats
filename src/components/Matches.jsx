@@ -1,9 +1,29 @@
-import '../styles/Match.css'
+import '../styles/Matches.css'
 import { useState } from 'react';
 import { MatchPredictions } from './MatchPredictions';
-import { useFootballData } from "../hooks/useFootballData"
 
-export function Match({ match }) {
+export function Matches({ matches }){
+
+  return(
+    <div className="matches">
+      <span className='title'>Matches</span>
+      {matches && matches.length > 0 ? (
+
+          matches.map(match => (
+            <Match match={match} key={match.id}/>
+          ))
+
+        ) : (
+          <span className='message'>This league has no games on this date :( </span>
+        )
+      } 
+
+    </div>
+  )
+}
+
+
+function Match({ match }) {
   const [showPredictions, setShowPredictions] = useState(false);
 
   const handleMatchClick = () => {
@@ -12,9 +32,6 @@ export function Match({ match }) {
 
   return (
     <div className="match" key={match.id} onClick={() => handleMatchClick(match.id)}>
-      <div className="competition">
-        {match.league.name} 
-      </div>
 
       <div className="match-info">
         <div className="team">

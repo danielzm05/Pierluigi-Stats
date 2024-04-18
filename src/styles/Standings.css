@@ -6,7 +6,6 @@
   background-color: var(--grey);
   border-radius: 10px;
   font-size: 13px;
-  border: 0.01em solid var(--light-grey);
 }
 
 .standings{

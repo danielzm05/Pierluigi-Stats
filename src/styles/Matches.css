@@ -1,42 +1,51 @@
-.match{
-  max-width: 600px;
+.matches{
   width: 100%;
-  background-color: var(--grey);
-  border-radius: 10px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 13px;
-  cursor: pointer;
-  border: 0.01em solid var(--light-grey);
+  border-radius: 10px;
+  background-color: var(--grey);
 
-  & .competition{
-    border-bottom: 0.01em solid var(--light-grey);
-    padding: 5px 10px;
-    font-weight: bold;
+  .title{
+    width: 100%;
     color: var(--light-grey);
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
   }
+}
+
+.match{
+  width: 100%;
+  cursor: pointer;
+  border-top: 0.01em solid var(--black);
 
   .match-info{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
+    padding: 5px 0;
     
-    & .team, .info-container{
+    .team, .info-container{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
       & .logo{
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
       }
     }
 
-    & .date{
+    .date{
       color: var(--light-grey);
       font-weight:lighter;
     }
 
-    & .score {
+    .score {
       font-size: 16px;
     }
   }
