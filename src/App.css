@@ -37,33 +37,7 @@ main{
   color: var(--light-grey);
 }
 
-.standings-container{
-  display: grid;
-  grid-template-columns: auto;
-  max-width: 600px;
-  width: 100%;
-  background-color: var(--grey);
-  border-radius: 10px;
-  font-size: 13px;
-  border: 0.01em solid var(--light-grey);
-}
 
-.standings{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 5px;
-  padding: 10px;
-  border: 0.01em solid var(--light-grey);
 
-  .title {
-    color: var(--light-grey);
-    font-weight: bold;
-    grid-column: 1 / -1; /* Ocupa todas las columnas de la primera fila */
-  }
 
-  .team{
-    display: grid;
-    grid-template-columns: auto 1fr;
-  }
-}
 

@@ -18,7 +18,7 @@ export function App() {
       <Header/>
 
       <main>
-        <h2>Today Matches</h2>
+        {/* <h2>Today Matches</h2> */}
 
       <Standings/>
 
