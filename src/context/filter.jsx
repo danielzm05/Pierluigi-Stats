@@ -5,9 +5,11 @@ export const FiltersContext = createContext()
 
 //2. Crear Provider, para proveer el contexto
 export function FiltersProvider ({ children }) {
+  const currentDate = new Date().toJSON().slice(0, 10).replaceAll('-','');
+  
   const [filters, setFilters]= useState({
     league: 'eng.1',
-    date: '20240414'
+    date: currentDate
   })
 
   const updateLeague = (newLeague) => {

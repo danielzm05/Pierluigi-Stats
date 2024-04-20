@@ -18,10 +18,10 @@ export function App() {
 
       <main>
         {/* <h2>Today Matches</h2> */}
-
+        
       <Matches matches={matches}/>
       <Standings/>
-      <Matches matches={matches}/>
+      
 
       </main>
     </>

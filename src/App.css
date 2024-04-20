@@ -26,16 +26,13 @@ body {
 main{
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  flex-direction: column;
   padding: 20px;
   gap: 20px;
 }
 
-.message{
-  color: var(--light-grey);
-}
+
 
 
 

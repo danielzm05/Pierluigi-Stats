@@ -62,10 +62,10 @@ export function getTeamPredictions (teamId, competition , quantityOfMatches){
       total: lastMatches?.filter(match => match.teams[0].stats.offsides + match.teams[1].stats.offsides <= 3 ).length,
     },{ 
       title: 'Committing more than 1.5 Offsides',
-      total: lastMatches?.filter(match => match.teams.some(team => team.id === teamId && team.stats.offsides > 9)).length,
+      total: lastMatches?.filter(match => match.teams.some(team => team.id === teamId && team.stats.offsides > 1)).length,
     },{
       title: 'Committing less than 1.5 Offsides',
-      total: lastMatches?.filter(match => match.teams.some(team => team.id === teamId && team.stats.offsides <= 9)).length,
+      total: lastMatches?.filter(match => match.teams.some(team => team.id === teamId && team.stats.offsides <= 1)).length,
     }
   ]
     

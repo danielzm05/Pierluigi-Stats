@@ -16,6 +16,11 @@
     padding: 10px 0;
     text-align: center;
   }
+
+  .message{
+    color: var(--light-grey);
+    padding: 10px 0;
+  }
 }
 
 .match{
@@ -53,7 +58,7 @@
   .predictions{
     display: flex;
     background: var(--black);
-    border-radius: 0 0 10px 10px;
+    border: 0.01em solid var(--grey);
 
     & .team-prediction {
       width: 50%;
