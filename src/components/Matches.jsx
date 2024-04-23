@@ -1,6 +1,7 @@
 import '../styles/Matches.css'
 import { useState } from 'react';
 import { MatchPredictions } from './MatchPredictions';
+import { MatchLineUps } from './MatchLineUps';
 
 export function Matches({ matches }){
 
@@ -55,13 +56,22 @@ function Match({ match }) {
         </div>
       </div>
 
-      {showPredictions && (
+      <MatchLineUps
+        homeTeamFormation={match.teams[0].formation}
+        homeTeamPlayers={match.teams[0].players}
+        homeTeamColor={match.teams[0].color}
+        awayTeamFormation={match.teams[1].formation}
+        awayTeamPlayers={match.teams[1].players}
+        awayTeamColor={match.teams[1].color}
+      />
+
+      {/* {showPredictions && (
         <MatchPredictions 
           homeTeamId={match.teams[0].id}
           awayTeamId={match.teams[1].id}
           competition={match.league.code}
         />
-      ) }
+      ) } */}
     </div>
   );
 }

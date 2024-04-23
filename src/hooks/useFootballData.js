@@ -34,6 +34,7 @@ async function getStatsGame(endpoint, leagueCode) {
       date: match.header.competitions[0].date.substring(5, 10).replace("-", "/"),
       status: match.header.competitions[0].status.type.detail,
       complete: match.header.competitions[0].status.type.completed,
+      venue: match.gameInfo.venue.fullName,
 
       ...(match.header.competitions[0].status.type.detail === 'FT' && { 
         referee: match.gameInfo.officials[0].displayName, 
@@ -43,13 +44,16 @@ async function getStatsGame(endpoint, leagueCode) {
         {
           id: match.boxscore.teams[0].team.id,
           name: match.boxscore.teams[0].team.displayName,
+          abbreviation: match.boxscore.teams[0].team.abbreviation,
           logo: match.boxscore.teams[0].team.logo,
+          color: match.boxscore.teams[0].team.color,
           winner: match.rosters[0].winner,
           score: Number(match.header.competitions[0].competitors[0].score),
-
+          formation: match.rosters[0].formation,
+          players: match.rosters[0].roster,
           ...(match.header.competitions[0].status.type.detail === 'FT' && { 
 
-            players: match.rosters[0].roster,
+            
             stats : {
               goals: {
                 fh: Number(match.header.competitions[0].competitors[0].linescores[0].displayValue),
@@ -69,11 +73,15 @@ async function getStatsGame(endpoint, leagueCode) {
         {
           id: match.boxscore.teams[1].team.id,
           name: match.boxscore.teams[1].team.displayName,
+          abbreviation: match.boxscore.teams[1].team.abbreviation,
           logo: match.boxscore.teams[1].team.logo,
+          color: match.boxscore.teams[1].team.color,
           winner: match.rosters[1].winner,
           score: Number(match.header.competitions[0].competitors[1].score),
+          formation: match.rosters[0].formation,
+          players: match.rosters[1].roster,
           ...(match.header.competitions[0].status.type.detail === 'FT' && { 
-            players: match.rosters[1].roster,
+
             stats : {
               goals: {
                 firstHalf: Number(match.header.competitions[0].competitors[1].linescores[0].displayValue),
@@ -97,6 +105,7 @@ async function getStatsGame(endpoint, leagueCode) {
       }
     })) 
 
+    console.log(matchesStats)
     return matchesStats; 
   } catch (error) {
     console.error('Error in getStatsGame:', error);
