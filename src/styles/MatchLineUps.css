@@ -1,0 +1,54 @@
+.lineups{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  border: 0.01em solid var(--grey);
+
+  .title{
+    text-transform: uppercase;
+    background-color: var(--grey);
+    color: var(--light-grey);
+    text-align:center
+  }
+
+  .starters, .substitutes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .team{
+      display: flex;
+      flex-direction: column;
+
+      .player{
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        border-top: 0.01em solid var(--grey);
+        column-gap: 10px;
+        padding: 3px 5px;
+
+        .shirt{
+          width: 20px;
+          height: 20px;
+          position: relative;
+
+          .number {
+            font-size: 8px;
+            color: var(--white);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; 
+            text-shadow: 2px 0 var(--black), -2px 0 var(--black), 0 2px var(--black), 0 -2px var(--black),
+           1px 1px var(--black), -1px -1px var(--black), 1px -1px var(--black), -1px 1px var(--black);
+          }
+        }
+      }
+    }
+
+    .team:first-child {
+      border-right: 0.01em solid var(--grey);
+    }
+
+  }
+}
