@@ -24,11 +24,11 @@
 
   .row{
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 7fr repeat(7, minmax(40px, 1fr));
+    grid-template-columns: 0.5fr 0.5fr 5fr repeat(7, minmax(10px, 1fr));
     grid-template-rows: 35px;
     column-gap: 5px;
     align-items: center;
-    text-align: center;
+    text-align: right;
   }
 
   .header{

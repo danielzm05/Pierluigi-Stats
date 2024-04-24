@@ -33,7 +33,7 @@ export function Header (){
         }
 
         <li className="menu__item" >
-          Leagues
+          LEAGUES
           <ul className='submenu'>
               
             <li className="submenu__item" onClick={() => handleLeagueChange('eng.1')}>

@@ -43,7 +43,7 @@ async function getStatsGame(endpoint, leagueCode) {
       teams: [
         {
           id: match.boxscore.teams[0].team.id,
-          name: match.boxscore.teams[0].team.displayName,
+          name: match.boxscore.teams[0].team.shortDisplayName,
           abbreviation: match.boxscore.teams[0].team.abbreviation,
           logo: match.boxscore.teams[0].team.logo,
           color: match.boxscore.teams[0].team.color,
@@ -75,7 +75,7 @@ async function getStatsGame(endpoint, leagueCode) {
         },
         {
           id: match.boxscore.teams[1].team.id,
-          name: match.boxscore.teams[1].team.displayName,
+          name: match.boxscore.teams[1].team.shortDisplayName,
           abbreviation: match.boxscore.teams[1].team.abbreviation,
           logo: match.boxscore.teams[1].team.logo,
           color: match.boxscore.teams[1].team.color,

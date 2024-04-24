@@ -4,7 +4,7 @@ export function MatchLineUps ({ homeTeamFormation , homeTeamPlayers, homeTeamCol
   return(
     <div className="lineups">
 
-      <span className="title">STARTERS</span>
+      <span className="title-lineup">STARTERS</span>
       <div className="starters">
        <div className="team">
           {homeTeamPlayers.starters.map( player => (
@@ -19,7 +19,7 @@ export function MatchLineUps ({ homeTeamFormation , homeTeamPlayers, homeTeamCol
         </div>
       </div>
 
-      <span className="title">SUBSTITUTES</span>
+      <span className="title-lineup">SUBSTITUTES</span>
       <div className="substitutes">
         <div className="team">
           {homeTeamPlayers.substitutes.map( player => (

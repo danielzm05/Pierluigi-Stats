@@ -55,6 +55,30 @@
     }
   }
 
+  .match-menu{
+    display: flex;
+    flex-direction: column;
+
+    ul{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      
+      
+      li{
+        padding: 5px;
+        color: var(--light-grey);
+        transition: 0.03s ease;
+      }
+
+      .selected{
+        color: var(--yellow);
+        border-bottom: 2px solid var(--yellow);
+      }
+    }
+  }
+
   .predictions{
     display: flex;
     background: var(--black);

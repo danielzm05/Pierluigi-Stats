@@ -25,16 +25,22 @@ export function Matches({ matches }){
 
 
 function Match({ match }) {
-  const [showPredictions, setShowPredictions] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showItem, setShowItem] = useState(1);
 
   const handleMatchClick = () => {
-    setShowPredictions(!showPredictions);
+    setShowMenu(!showMenu);
+  };
+
+  const handleChangeItem = (number) => {
+    setShowItem(number);
+    console.log(number)
   };
 
   return (
-    <div className="match" key={match.id} onClick={() => handleMatchClick(match.id)}>
+    <div className="match" key={match.id}>
 
-      <div className="match-info">
+      <div className="match-info" onClick={() => handleMatchClick(match.id)}>
         <div className="team">
           <img className="logo" src={match.teams[0].logo} alt={`${match.teams[0].name} logo`} />
           <span>{match.teams[0].name}</span>
@@ -56,22 +62,35 @@ function Match({ match }) {
         </div>
       </div>
 
-      <MatchLineUps
-        homeTeamFormation={match.teams[0].formation}
-        homeTeamPlayers={match.teams[0].players}
-        homeTeamColor={match.teams[0].color}
-        awayTeamFormation={match.teams[1].formation}
-        awayTeamPlayers={match.teams[1].players}
-        awayTeamColor={match.teams[1].color}
-      />
+      {showMenu && (
+      <div className="match-menu">
+        <ul>
+          <li className={showItem === 1 ? 'selected' : ''} onClick={() => handleChangeItem(1)}>LINEUPS</li>
+          <li className={showItem === 2 ? 'selected' : ''} onClick={() => handleChangeItem(2)} >PREDICTIONS</li>
+        </ul>
 
-      {/* {showPredictions && (
+        {showItem === 1 && (
+          <MatchLineUps
+            homeTeamFormation={match.teams[0].formation}
+            homeTeamPlayers={match.teams[0].players}
+            homeTeamColor={match.teams[0].color}
+            awayTeamFormation={match.teams[1].formation}
+            awayTeamPlayers={match.teams[1].players}
+            awayTeamColor={match.teams[1].color}
+          /> 
+        )}
+
+        {showItem === 2 && (
         <MatchPredictions 
           homeTeamId={match.teams[0].id}
           awayTeamId={match.teams[1].id}
           competition={match.league.code}
         />
-      ) } */}
+        )}
+        
+
+      </div>
+      )}
     </div>
   );
 }

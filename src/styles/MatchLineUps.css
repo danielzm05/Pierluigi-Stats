@@ -4,10 +4,11 @@
   background-color: var(--black);
   border: 0.01em solid var(--grey);
 
-  .title{
+  .title-lineup{
     text-transform: uppercase;
     background-color: var(--grey);
     color: var(--light-grey);
+    padding: 5px;
     text-align:center
   }
 
