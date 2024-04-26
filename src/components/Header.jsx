@@ -1,6 +1,7 @@
 import { useContext, useState} from 'react'
 import { FiltersContext } from '../context/filter'
 import { Calendar } from './Calendar';
+import logo from '../img/logo.png'
 import '../styles/Header.css'
 
 
@@ -19,8 +20,7 @@ export function Header (){
 
   return(
     <header>
-    <a className="logo" href="#">Pierluigi Stats</a>
-    
+    <img className='logo' src={logo} alt="logo" />
 
     <nav>
       <ul className="menu">
