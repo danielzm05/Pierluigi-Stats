@@ -70,6 +70,7 @@ function Match({ match }) {
         </ul>
 
         {showItem === 1 && (
+
           <MatchLineUps
             homeTeamFormation={match.teams[0].formation}
             homeTeamPlayers={match.teams[0].players}

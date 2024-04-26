@@ -4,6 +4,8 @@ export function MatchLineUps ({ homeTeamFormation , homeTeamPlayers, homeTeamCol
   return(
     <div className="lineups">
 
+      {homeTeamFormation && (
+        <>
       <span className="title-lineup">STARTERS</span>
       <div className="starters">
        <div className="team">
@@ -34,6 +36,9 @@ export function MatchLineUps ({ homeTeamFormation , homeTeamPlayers, homeTeamCol
         </div>
 
       </div>
+        </>
+      )}
+
     </div>
 
   )

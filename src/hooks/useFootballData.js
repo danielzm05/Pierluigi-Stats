@@ -49,11 +49,14 @@ async function getStatsGame(endpoint, leagueCode) {
           color: match.boxscore.teams[0].team.color,
           winner: match.rosters[0].winner,
           score: Number(match.header.competitions[0].competitors[0].score),
-          formation: match.rosters[0].formation,
-          players:{
-            starters: match.rosters[0].roster.filter(player => player.starter === true),
-            substitutes: match.rosters[0].roster.filter(player => player.starter === false),
-          },
+          ...(match.rosters[0].roster && { 
+            formation: match.rosters[0].formation,
+            players:{
+              starters: match.rosters[0].roster.filter(player => player.starter === true),
+              substitutes: match.rosters[0].roster.filter(player => player.starter === false),
+            },
+          }),
+
           ...(match.header.competitions[0].status.type.detail === 'FT' && { 
 
             
@@ -81,11 +84,14 @@ async function getStatsGame(endpoint, leagueCode) {
           color: match.boxscore.teams[1].team.color,
           winner: match.rosters[1].winner,
           score: Number(match.header.competitions[0].competitors[1].score),
-          formation: match.rosters[1].formation,
-          players:{
-            starters: match.rosters[1].roster.filter(player => player.starter === true),
-            substitutes: match.rosters[1].roster.filter(player => player.starter === false),
-          },
+
+          ...(match.rosters[1].roster && { 
+            formation: match.rosters[1].formation,
+            players:{
+              starters: match.rosters[1].roster.filter(player => player.starter === true),
+              substitutes: match.rosters[1].roster.filter(player => player.starter === false),
+            },
+          }),
 
           ...(match.header.competitions[0].status.type.detail === 'FT' && { 
 
