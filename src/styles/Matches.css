@@ -43,15 +43,32 @@
         width: 32px;
         height: 32px;
       }
-    }
 
-    .date{
-      color: var(--light-grey);
-      font-weight:lighter;
+      .date{
+        color: var(--light-grey);
+        font-weight:lighter;
+      }
+  
+      .score {
+        font-size: 16px;
+      }
     }
+  }
 
-    .score {
-      font-size: 16px;
+  .match-scorers{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px ;
+    color: var(--light-grey);
+    
+    .scorers{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .scorers.home{
+      text-align: right;
     }
   }
 
@@ -79,17 +96,7 @@
     }
   }
 
-  .match-stats{
-    display: grid;
-    grid-template-columns: auto 1fr auto 1fr auto; 
-    grid-auto-rows: auto;
-    padding: 20px 10px;
-    gap: 20px 8px;
-    align-items: center;
-    text-align: center;
-    background: var(--black);
-    border: 0.01em solid var(--grey);
-  }
+
 
   .predictions{
     display: flex;

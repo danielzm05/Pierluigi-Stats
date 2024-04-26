@@ -59,7 +59,7 @@ async function getStatsGame(endpoint, leagueCode) {
 
           ...(match.header.competitions[0].status.type.detail === 'FT' && { 
 
-            
+            goalscorers: match.header.competitions[0].details.filter(scorer => scorer.team.id === match.boxscore.teams[0].team.id),
             stats : {
               goals: {
                 fh: Number(match.header.competitions[0].competitors[0].linescores[0].displayValue),
@@ -92,9 +92,9 @@ async function getStatsGame(endpoint, leagueCode) {
               substitutes: match.rosters[1].roster.filter(player => player.starter === false),
             },
           }),
-
-          ...(match.header.competitions[0].status.type.detail === 'FT' && { 
-
+          ...(match.header.competitions[0].status.type.detail === 'FT' && {
+            
+            goalscorers: match.header.competitions[0].details.filter(scorer => scorer.team.id === match.boxscore.teams[1].team.id),
             stats : {
               goals: {
                 firstHalf: Number(match.header.competitions[0].competitors[1].linescores[0].displayValue),

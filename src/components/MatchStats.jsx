@@ -1,5 +1,5 @@
 import ProgressBar from "@ramonak/react-progress-bar";
-
+import '../styles/MatchStats.css'
 
 export function MatchStats({homeTeam, awayTeam}){
   return (
@@ -32,6 +32,12 @@ export function MatchStats({homeTeam, awayTeam}){
         <ProgressBar className="stat-bar" completed={awayTeam.corners} maxCompleted={homeTeam.corners+awayTeam.corners} baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
         <span>{awayTeam.corners}</span>
 
+        <span>{homeTeam.offsides}</span>
+        <ProgressBar className="stat-bar" completed={homeTeam.offsides} maxCompleted={homeTeam.offsides+awayTeam.offsides} dir="rtl" baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
+        <span>Offsides</span>
+        <ProgressBar className="stat-bar" completed={awayTeam.offsides} maxCompleted={homeTeam.offsides+awayTeam.offsides} baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
+        <span>{awayTeam.offsides}</span>
+
         <span>{homeTeam.yellowCards}</span>
         <ProgressBar className="stat-bar" completed={homeTeam.yellowCards} maxCompleted={homeTeam.yellowCards+awayTeam.yellowCards} dir="rtl" baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
         <span>Yellow Cards</span>
@@ -43,12 +49,6 @@ export function MatchStats({homeTeam, awayTeam}){
         <span>Red Cards</span>
         <ProgressBar className="stat-bar" completed={awayTeam.redCards} maxCompleted={homeTeam.redCards+awayTeam.redCards} baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
         <span>{awayTeam.redCards}</span>
-
-        <span>{homeTeam.offsides}</span>
-        <ProgressBar className="stat-bar" completed={homeTeam.offsides} maxCompleted={homeTeam.offsides+awayTeam.offsides} dir="rtl" baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
-        <span>Offsides</span>
-        <ProgressBar className="stat-bar" completed={awayTeam.offsides} maxCompleted={homeTeam.offsides+awayTeam.offsides} baseBgColor="#12141a" bgColor="#FFD369" height="8px" customLabel=" "/>
-        <span>{awayTeam.offsides}</span>
 
 
         
