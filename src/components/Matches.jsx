@@ -2,6 +2,7 @@ import '../styles/Matches.css'
 import { useState } from 'react';
 import { MatchPredictions } from './MatchPredictions';
 import { MatchLineUps } from './MatchLineUps';
+import { MatchStats } from './MatchStats';
 
 export function Matches({ matches }){
 
@@ -65,11 +66,20 @@ function Match({ match }) {
       {showMenu && (
       <div className="match-menu">
         <ul>
-          <li className={showItem === 1 ? 'selected' : ''} onClick={() => handleChangeItem(1)}>LINEUPS</li>
-          <li className={showItem === 2 ? 'selected' : ''} onClick={() => handleChangeItem(2)} >PREDICTIONS</li>
+          <li className={showItem === 1 ? 'selected' : ''} onClick={() => handleChangeItem(1)}>STATS</li>
+          <li className={showItem === 2 ? 'selected' : ''} onClick={() => handleChangeItem(2)}>LINEUPS</li>
+          <li className={showItem === 3 ? 'selected' : ''} onClick={() => handleChangeItem(3)}>PREDICTIONS</li>
         </ul>
 
         {showItem === 1 && (
+          <MatchStats
+            homeTeam={match.teams[0].stats}
+            awayTeam={match.teams[1].stats}
+          />
+
+        )}
+
+        {showItem === 2 && (
 
           <MatchLineUps
             homeTeamFormation={match.teams[0].formation}
@@ -81,7 +91,7 @@ function Match({ match }) {
           /> 
         )}
 
-        {showItem === 2 && (
+        {showItem === 3 && (
         <MatchPredictions 
           homeTeamId={match.teams[0].id}
           awayTeamId={match.teams[1].id}
