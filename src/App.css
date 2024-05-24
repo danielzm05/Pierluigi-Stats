@@ -1,30 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
-  --black: #12141a;
-  --black-shadow: #22283188;
-  --white: #EEEEEE;
-  --grey: #212330;
-  --light-grey: #848fa0;
-  --yellow: #FFD369;
-  --red: #D2001A;
-  --field-green: #3B9140;
+  --background: #1b1b1b;
+  --white: #eeeeee;
+  --table: #0d0d0d;
+  --light-grey: #b6b6b6;
+  --yellow: #ffd369;
+  --red: #d2001a;
+  --field-green: #3b9140;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
 }
 
-main{
+main {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -33,10 +34,3 @@ main{
   padding: 20px 10px;
   gap: 10px;
 }
-
-
-
-
-
-
-

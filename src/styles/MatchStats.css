@@ -1,11 +1,11 @@
-.match-stats{
+.match-stats {
   display: grid;
-  grid-template-columns: auto 1fr auto 1fr auto; 
+  grid-template-columns: auto 1fr auto 1fr auto;
   grid-auto-rows: auto;
   padding: 20px 10px;
   gap: 20px 8px;
   align-items: center;
   text-align: center;
-  background: var(--black);
-  border: 0.01em solid var(--grey);
+  background: var(--background);
+  border: 0.01em solid var(--table);
 }

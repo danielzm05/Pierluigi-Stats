@@ -1,28 +1,25 @@
-.standings-container{
+.standings-container {
   display: grid;
   grid-template-columns: auto;
-  max-width: 600px;
   width: 100%;
-  background-color: var(--grey);
-  border-radius: 10px;
-  font-size: 13px;
+  background-color: var(--table);
+  border-radius: 14px;
+  font-size: 12px;
 }
 
-.standings{
+.standings {
   display: grid;
   grid-template-columns: 1fr;
   padding: 0 10px 10px 10px;
-  color: var(--light-grey);
 
   .title {
     padding: 10px 0;
-    color: var(--light-grey);
-    font-weight: bold;
-    grid-column: 1 / -1; /* Ocupa todas las columnas de la primera fila */
+    grid-column: 1 / -1;
+    font-size: 14px;
     text-align: center;
   }
 
-  .row{
+  .row {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 5fr repeat(7, minmax(10px, 1fr));
     grid-template-rows: 35px;
@@ -31,27 +28,23 @@
     text-align: right;
   }
 
-  .header{
-    font-weight: bold;
-  }
-
   .header > *:first-child {
     text-align: left;
     grid-column: 1 / -8;
   }
-  
 
-  .team{
-    border-top: 0.01em solid var(--black);
-    .name{
+  .team {
+    .name {
       text-align: left;
     }
 
-    .logo{
+    .logo {
+      height: 30px;
+      width: 30px;
       margin: auto;
-      height: 25px;
-      width: 25px;
+      background-color: var(--background);
+      padding: 3px;
+      border-radius: 7px;
     }
-
   }
 }

@@ -1,107 +1,102 @@
-.matches{
+.matches {
   width: 100%;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  border-radius: 10px;
-  background-color: var(--grey);
+  font-size: 12px;
+  border-radius: 14px;
+  background-color: var(--table);
 
-  .title{
+  .title {
     width: 100%;
-    color: var(--light-grey);
-    font-weight: bold;
+    font-size: 14px;
     padding: 10px 0;
     text-align: center;
   }
 
-  .message{
+  .message {
     color: var(--light-grey);
     padding: 10px 0;
   }
 }
 
-.match{
+.match {
   width: 100%;
   cursor: pointer;
-  border-top: 0.01em solid var(--black);
 
-  .match-info{
+  .match-info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5px 0;
-    
-    .team, .info-container{
+
+    .team,
+    .info-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      & .logo{
+      .logo {
         width: 32px;
         height: 32px;
+        margin: auto;
+        background-color: var(--background);
+        padding: 3px;
+        border-radius: 7px;
       }
 
-      .date{
+      .date {
         color: var(--light-grey);
-        font-weight:lighter;
-      }
-  
-      .score {
-        font-size: 16px;
+        font-size: 10px;
       }
     }
   }
 
-  .match-scorers{
+  .match-scorers {
     display: flex;
     justify-content: space-between;
-    padding: 10px ;
+    padding: 10px;
     color: var(--light-grey);
-    
-    .scorers{
+
+    .scorers {
       display: flex;
       flex-direction: column;
       gap: 5px;
     }
-    
-    .scorers.home{
+
+    .scorers.home {
       text-align: right;
     }
   }
 
-  .match-menu{
+  .match-menu {
     display: flex;
     flex-direction: column;
 
-    ul{
+    ul {
       width: 100%;
       display: flex;
       justify-content: center;
       list-style: none;
-      
-      
-      li{
+
+      li {
         padding: 5px;
         color: var(--light-grey);
         transition: 0.03s ease;
       }
 
-      .selected{
+      .selected {
         color: var(--yellow);
         border-bottom: 2px solid var(--yellow);
       }
     }
   }
 
-
-
-  .predictions{
+  .predictions {
     display: flex;
-    background: var(--black);
-    border: 0.01em solid var(--grey);
+    background: var(--background);
+    border: 0.01em solid var(--table);
 
     & .team-prediction {
       width: 50%;

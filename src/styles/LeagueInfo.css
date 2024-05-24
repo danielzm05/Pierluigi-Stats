@@ -1,0 +1,19 @@
+.league-info {
+  width: 100%;
+  grid-column: 1 / -1;
+  display: flex;
+  border-radius: 14px;
+  gap: 10px;
+  height: 150px;
+  padding: 10px;
+  color: var(--white);
+  background: linear-gradient(
+    190deg,
+    var(--table),
+    rgba(239, 200, 7, 0.7231267507002801) 100%
+  );
+
+  h1 {
+    font-weight: 500;
+  }
+}
