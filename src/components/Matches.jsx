@@ -27,7 +27,7 @@ export function Matches({ matches }){
 
 function Match({ match }) {
   const [showInfo, setShowInfo] = useState(false);
-  const [showItem, setShowItem] = useState(3);
+  const [showItem, setShowItem] = useState(match.status === "FT" ? 1 : 3);
 
   const handleMatchClick = () => {
     setShowInfo(!showInfo);
